@@ -63,7 +63,6 @@
 
 		<!--悬浮搜索框-->
 		<div class="nav white">
-			<!-- <div class="logo"><img src="images/logo.png" /></div> -->
 			<div class="logoBig">
 				<li><a href="index.html"><img src="images/logobig.png" /></a></li>
 			</div>
@@ -301,9 +300,7 @@
 												<span class="specName">规格：{{commentRecord.specName}}</span>
 											</div>
 										</div>
-
 									</div>
-									<!-- 评论内容 -->
 								</div>
 							</li>
 						</ul>
@@ -318,16 +315,6 @@
 						</div>
 						<!-- 分页 end-->
 
-						<!--分页 -->
-						<!-- <ul class="am-pagination am-pagination-right">
-							<li class="am-disabled"><a href="#">&laquo;</a></li>
-							<li class="am-active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
-						</ul> -->
 						<div class="clear"></div>
 					</div>
 					<div class="am-tab-panel am-fade">
@@ -458,11 +445,10 @@
 				// 从购物车中拿到商品的数量
 				this.shopcartItemCounts = app.getShopcartItemCounts();
 
+				this.renderCommentLevelCounts(itemId);
 
 				// 渲染商品评价列表内容
 				this.renderComments(itemId, this.level, this.page, this.pageSize);
-				this.renderCommentLevelCounts(itemId);
-
 			},
 			methods: {
 				goUserCenter() {
@@ -487,7 +473,6 @@
 								var countsVO = res.data.data;
 								this.countsVO = countsVO;
 								// console.log(countsVO);
-
 							} else if (res.data.status == 500) {
 								alert(res.data.msg);
 							}
